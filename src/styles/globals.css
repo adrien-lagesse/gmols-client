@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    @font-face {
+        font-family: krypton;
+        src: url("/fonts/MonaspaceKryptonVarVF[wght,wdth,slnt].ttf");
+    }
+
+    @font-face {
+        font-family: neon;
+        src: url("/fonts/MonaspaceNeonVarVF[wght,wdth,slnt].ttf");
+    }
+}
+
+:root {
+    font-family: krypton;
+    font-weight: 400;
+}
