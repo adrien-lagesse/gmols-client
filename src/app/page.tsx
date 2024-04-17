@@ -1,13 +1,17 @@
-import dynamic from "next/dynamic";
-
-const Visualizer = dynamic(() => import("@/components/visualizer"), {
-	ssr: false,
-});
+"use client";
+import CompoundSummary from "@/components/compoundSummary";
+import SearchBar from "@/components/searchBar";
+import { useState } from "react";
 
 export default function Home() {
+	const [searchValue, setSearchValue] = useState<string>("");
+
 	return (
-	<main>
-		<Visualizer/>
-	</main>
+		<main>
+			<div className="p-8">
+				<SearchBar onSearch={setSearchValue} />
+			</div>
+			<CompoundSummary cid={Number.parseInt(searchValue)}/>
+		</main>
 	);
 }
